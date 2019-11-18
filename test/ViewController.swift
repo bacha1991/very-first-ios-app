@@ -27,25 +27,26 @@ class ViewController: UIViewController {
     
     var dispalyValue: Double {
         get {
-            return Double(display!.text!)!
+            return Double(display.text!)!
         }
         
         set {
-            display!.text = String(newValue)
+            display.text = String(newValue)
         }
     }
     
+    private var brain: CalBrain = CalBrain()
+    
     @IBAction func performOperation(_ sender: UIButton) {
+        if isMiddleOfTyping {
+            brain.setOperand(dispalyValue)
+            isMiddleOfTyping = false
+        }
         if let mathSymbol = sender.currentTitle {
-            switch mathSymbol {
-                case "Pi":
-                    dispalyValue = Double.pi
-                case "√":
-                    dispalyValue = sqrt(dispalyValue)
-                default:
-                   break
-            }
-           
+            brain.performOperation(mathSymbol)
+        }
+        if let result = brain.result {
+           dispalyValue = result
         }
     }
 }
