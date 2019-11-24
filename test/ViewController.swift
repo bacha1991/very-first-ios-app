@@ -13,6 +13,14 @@ class ViewController: UIViewController {
     
     var isMiddleOfTyping = false
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        brain.addUnaryOperator(named: "✅") { [unowned self] in
+            self.display.textColor = UIColor.green
+            return sqrt($0)
+        }
+    }
+    
     @IBAction func touchDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
         

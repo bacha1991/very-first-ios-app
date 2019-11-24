@@ -9,6 +9,7 @@
 import Foundation
 
 struct CalBrain {
+    
     private var accum: Double?
     
     private enum Operation {
@@ -79,5 +80,9 @@ struct CalBrain {
         get {
             return accum
         }
+    }
+    
+    mutating func addUnaryOperator(named symbol: String, _ operation: @escaping (Double) -> Double) {
+        operations[symbol] = Operation.unaryOperation(operation)
     }
 }
