@@ -49,6 +49,7 @@
                                     <outlet property="nameLabel" destination="lMg-F4-WV6" id="5iL-Cs-ZoA"/>
                                     <outlet property="photoImageView" destination="4OY-nU-mAU" id="VQa-L8-z4e"/>
                                     <outlet property="ratingControl" destination="mZN-lA-tuU" id="nsj-R2-ipq"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="SoT-54-HhG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,19 +75,19 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MealViewController" customModule="test_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="W5q-CT-4bw">
-                                <rect key="frame" x="0.0" y="120" width="375" height="486"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="518"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5z-mE-rRB">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="7Dh-Yo-zcA">
-                                        <rect key="frame" x="27.5" y="114" width="320" height="320"/>
+                                        <rect key="frame" x="27.5" y="146" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7Dh-Yo-zcA" secondAttribute="height" multiplier="1:1" id="c6b-mM-0iD"/>
@@ -96,7 +97,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fX4-Li-7gM" customClass="RatingControl" customModule="test_1" customModuleProvider="target">
-                                        <rect key="frame" x="61.5" y="442" width="252" height="44"/>
+                                        <rect key="frame" x="61.5" y="474" width="252" height="44"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="size" keyPath="startSize">
                                                 <size key="value" width="44" height="44"/>
@@ -149,7 +150,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1820" y="126.38680659670166"/>
+            <point key="canvasLocation" x="1705" y="284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JiB-TD-DLT">
@@ -185,10 +186,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpv-2t-53Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="880.79999999999995" y="126.38680659670166"/>
+            <point key="canvasLocation" x="918" y="-146"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="1500" height="1000"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="SoT-54-HhG"/>
+    </inferredMetricsTieBreakers>
 </document>
